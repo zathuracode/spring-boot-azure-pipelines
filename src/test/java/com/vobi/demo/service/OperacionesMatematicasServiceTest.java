@@ -22,7 +22,7 @@ class OperacionesMatematicasServiceTest {
 		Integer resultado=0;
 		
 		//Act
-		resultado=operacionesMatematicasService.sum(n1, n2);
+		resultado=operacionesMatematicasService.sumar(n1, n2);
 		
 		//Asset		
 		assertEquals(6, resultado);
@@ -36,7 +36,7 @@ class OperacionesMatematicasServiceTest {
 				
 		//Act
 		assertThrows(Exception.class, ()->{
-			operacionesMatematicasService.sum(n1, n2);
+			operacionesMatematicasService.sumar(n1, n2);
 		});
 		
 	}
@@ -49,7 +49,7 @@ class OperacionesMatematicasServiceTest {
 				
 		//Act
 		assertThrows(Exception.class, ()->{
-			operacionesMatematicasService.sum(n1, n2);
+			operacionesMatematicasService.sumar(n1, n2);
 		});
 		
 	}
