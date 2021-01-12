@@ -7,13 +7,13 @@ public class OperacionesMatematicasServiceImpl implements OperacionesMatematicas
 
 	@Override
 	public Integer sumar(Integer n1, Integer n2) throws Exception {
-		if(n1==null) {
-    		throw new Exception("El n1 es nulo");
-    	}
-    	
-    	if(n2==null) {
-    		throw new Exception("El n2 es nulo");
-    	}
+//		if(n1==null) {
+//    		throw new Exception("El n1 es nulo");
+//    	}
+//    	
+//    	if(n2==null) {
+//    		throw new Exception("El n2 es nulo");
+//    	}
     	
     	return n1+n2;
 	}
