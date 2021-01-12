@@ -29,29 +29,43 @@ class OperacionesMatematicasServiceTest {
 	}
 	
 	@Test
-	public void debeLanzarExceptionNumeroUno()throws Exception {
+	public void debeLanzarExceptionNumeroUno() {
 		//Arrange
 		Integer n1=null;
 		Integer n2=4;
+		String expectedMessage = "El n1 es nulo";
+	    String actualMessage=null;
+
 				
 		//Act
-		assertThrows(Exception.class, ()->{
+		Exception exception =assertThrows(Exception.class, ()->{
 			operacionesMatematicasService.sumar(n1, n2);
 		});
+		actualMessage=exception.getMessage();
+		
+		//Asset		
+		assertTrue(actualMessage.contains(expectedMessage));
 		
 	}
 	
 	@Test
-	public void debeLanzarExceptionNumeroDos()throws Exception {
+	public void debeLanzarExceptionNumeroDos() {
 		//Arrange
 		Integer n1=2;
 		Integer n2=null;
+		String expectedMessage = "El n2 es nulo";
+	    String actualMessage=null;
+
 				
 		//Act
-		assertThrows(Exception.class, ()->{
+		Exception exception =assertThrows(Exception.class, ()->{
 			operacionesMatematicasService.sumar(n1, n2);
 		});
+		actualMessage=exception.getMessage();
 		
+		//Asset		
+		assertTrue(actualMessage.contains(expectedMessage));
+
 	}
 
 }
