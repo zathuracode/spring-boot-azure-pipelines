@@ -15,7 +15,7 @@ class OperacionesMatematicasServiceTest {
 	OperacionesMatematicasService operacionesMatematicasService;
 	
 	@Test
-	public void debeSumar()throws Exception {
+	public void debeSumarDosNumeros()throws Exception {
 		//Arrange
 		Integer n1=2;
 		Integer n2=4;
