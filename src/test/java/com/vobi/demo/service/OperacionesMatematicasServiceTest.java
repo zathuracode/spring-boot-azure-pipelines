@@ -24,7 +24,7 @@ class OperacionesMatematicasServiceTest {
 		//Act
 		resultado=operacionesMatematicasService.sumar(n1, n2);
 		
-		//Asset		
+		//Assert		
 		assertEquals(6, resultado);
 	}
 	
@@ -43,7 +43,7 @@ class OperacionesMatematicasServiceTest {
 		});
 		actualMessage=exception.getMessage();
 		
-		//Asset		
+		//Assert		
 		assertTrue(actualMessage.contains(expectedMessage));
 		
 	}
@@ -63,7 +63,7 @@ class OperacionesMatematicasServiceTest {
 		});
 		actualMessage=exception.getMessage();
 		
-		//Asset		
+		//Assert		
 		assertTrue(actualMessage.contains(expectedMessage));
 
 	}
