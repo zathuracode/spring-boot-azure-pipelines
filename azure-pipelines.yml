@@ -22,7 +22,7 @@ stages:
         jdkArchitectureOption: 'x64'
         jdkSourceOption: 'PreInstalled'
         
-- stage: Maven Task
+- stage: Maven_Task
   displayName: Maven Task
   jobs:
   - job: Clean_Sources
