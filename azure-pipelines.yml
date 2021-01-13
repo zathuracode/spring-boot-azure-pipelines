@@ -22,8 +22,8 @@ stages:
         jdkArchitectureOption: 'x64'
         jdkSourceOption: 'PreInstalled'
         
-- stage: Clean
-  displayName: Clean Target
+- stage: Maven Task
+  displayName: Maven Task
   jobs:
   - job: Clean_Sources
     displayName: Clean Sources
@@ -36,10 +36,6 @@ stages:
         jdkVersionOption: '11'
         jdkArchitectureOption: 'x64'
         goals: 'clean'
- 
-- stage: Compile
-  displayName: Compile Sources
-  jobs:
   - job: Compile
     displayName: Compile
     steps:
@@ -51,10 +47,6 @@ stages:
         jdkVersionOption: '11'
         jdkArchitectureOption: 'x64'
         goals: 'compile'
-
-- stage: Test
-  displayName: Run Tests
-  jobs:
   - job: Test_Sources
     displayName: Test Sources
     steps:
@@ -68,10 +60,6 @@ stages:
         publishJUnitResults: false
         testResultsFiles: '**/surefire-reports/TEST-*.xml'
         goals: 'test'
-
-- stage: Package
-  displayName: Package Sources
-  jobs:
   - job: Package
     displayName: Package
     steps:
