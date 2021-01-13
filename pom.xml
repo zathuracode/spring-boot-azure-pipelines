@@ -68,6 +68,20 @@
 					</execution>
 				</executions>
 			</plugin>
+			
+			<plugin>
+				<groupId>org.pitest</groupId>
+				<artifactId>pitest-maven</artifactId>
+				<version>1.5.2</version>
+				<configuration>
+					<targetClasses>
+						<param>*service*</param>
+					</targetClasses>
+					<targetTests>
+						<param>*service*</param>
+					</targetTests>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 
