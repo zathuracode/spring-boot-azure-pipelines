@@ -92,9 +92,11 @@ stages:
     steps:
     - task: CopyFiles@2
       inputs:
-          SourceFolder: '$(System.DefaultWorkingDirectory)'
-          Contents: '**/target/*.?(war|jar)'
-          TargetFolder: $(Build.ArtifactStagingDirectory)
-    - upload: $(Build.ArtifactStagingDirectory)
-      artifact: drop
+        SourceFolder: '$(System.DefaultWorkingDirectory)'
+        Contents: '**/target/*.?(war|jar)'
+        TargetFolder: $(Build.ArtifactStagingDirectory)
+    - task: PublishBuildArtifacts@1
+      inputs:
+        pathToPublish: $(Build.ArtifactStagingDirectory)
+        artifactName: MyBuildOutputs
         
