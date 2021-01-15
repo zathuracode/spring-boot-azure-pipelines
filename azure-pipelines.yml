@@ -84,3 +84,19 @@ stages:
         jdkArchitectureOption: 'x64'
         goals: 'package -DskipTests=true'
 
+- stage: Copy_Files_to_artifact_staging_directory
+  displayName: Copy Files to artifact staging directory
+  jobs:
+  - job: Copy_Files_to_artifact_staging_directory
+    displayName: Copy_Files_to_artifact_staging_directory
+    steps:
+    - task: CopyFiles@2
+      inputs:
+        SourceFolder: '$(Build.SourcesDirectory)'
+        Contents: '**/target/*.?(war|jar)'
+        TargetFolder: '$(build.artifactstagingdirectory)'
+    - task: PublishBuildArtifacts@1
+      inputs:
+        PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+        artifactName: MyBuildOutputs
+        
