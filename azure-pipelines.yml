@@ -35,6 +35,7 @@ stages:
         javaHomeOption: 'JDKVersion'
         jdkVersionOption: '11'
         jdkArchitectureOption: 'x64'
+        publishJUnitResults: false
         goals: 'clean'
  
 - stage: Compile
@@ -50,6 +51,7 @@ stages:
         javaHomeOption: 'JDKVersion'
         jdkVersionOption: '11'
         jdkArchitectureOption: 'x64'
+        publishJUnitResults: false
         goals: 'compile'
 
 - stage: Test
@@ -82,6 +84,7 @@ stages:
         javaHomeOption: 'JDKVersion'
         jdkVersionOption: '11'
         jdkArchitectureOption: 'x64'
+        publishJUnitResults: false
         goals: 'package -DskipTests=true'
 
 - stage: Copy_Files_to_artifact_staging_directory
@@ -99,4 +102,3 @@ stages:
       inputs:
         PathtoPublish: '$(Build.ArtifactStagingDirectory)'
         artifactName: MyBuildOutputs
-        
