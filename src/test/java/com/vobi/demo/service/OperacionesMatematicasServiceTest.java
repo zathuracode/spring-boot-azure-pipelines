@@ -26,6 +26,7 @@ class OperacionesMatematicasServiceTest {
 		
 		//Assert		
 		assertEquals(6, resultado);
+		
 	}
 	
 	@Test
