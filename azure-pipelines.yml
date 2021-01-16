@@ -91,3 +91,7 @@ stages:
         SourceFolder: '$(Build.SourcesDirectory)'
         Contents: '**/target/*.?(war|jar)'
         TargetFolder: '$(build.artifactstagingdirectory)'
+    - task: PublishBuildArtifacts@1
+      inputs:
+        PathtoPublish: '$(build.artifactstagingdirectory)'
+        artifactName: MyBuildOutputs
