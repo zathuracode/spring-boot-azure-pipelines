@@ -52,7 +52,7 @@ stages:
         jdkVersionOption: '11'
         jdkArchitectureOption: 'x64'
         publishJUnitResults: false
-        goals: 'compile'
+        goals: 'compile -DskipTests=true'
 
 - stage: Test
   displayName: Run Tests
