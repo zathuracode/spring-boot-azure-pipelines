@@ -16,7 +16,5 @@ public class ResultadoDTO {
 	public void setResultado(Integer resultado) {
 		this.resultado = resultado;
 	}
-	
-	
 
 }
