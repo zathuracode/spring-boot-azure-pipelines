@@ -1,0 +1,33 @@
+# Maven
+# Build your Java project and run tests with Apache Maven.
+# Add steps that analyze code, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/java
+# Author: Diego Gomez Mosquera
+trigger:
+- '*'
+
+pool:
+  vmImage: 'ubuntu-20.04'
+
+stages:
+- stage: Config_Heroku
+  displayName: Bash Script Config
+  jobs:
+  - job: Config_Heroku
+    displayName: Config_Heroku
+    steps:
+    - task: Bash@3
+      inputs:
+        targetType: 'inline'
+        script: |
+                 cat >~/.netrc <<EOF
+                     machine api.heroku.com
+                       login $(heroku_email)
+                       password $(api_key)
+                     machine git.heroku.com
+                       login $(heroku_email)
+                       password $(api_key)
+                 EOF
+                 chmod 600 ~/.netrc
+                 tail ~/.netrc
+                 heroku apps
