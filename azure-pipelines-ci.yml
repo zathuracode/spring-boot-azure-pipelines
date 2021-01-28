@@ -24,6 +24,7 @@ stages:
         
 - stage: Clean
   displayName: Clean
+  dependsOn: Install_Java11
   jobs:
   - job: Clean_Sources
     displayName: Clean Sources
@@ -40,6 +41,7 @@ stages:
  
 - stage: Compile
   displayName: Compile Sources
+  dependsOn: Clean
   jobs:
   - job: Compile
     displayName: Compile
@@ -56,6 +58,7 @@ stages:
 
 - stage: Test
   displayName: Run Tests
+  dependsOn: Compile
   jobs:
   - job: Test_Sources
     displayName: Test Sources
@@ -73,6 +76,7 @@ stages:
 
 - stage: Package
   displayName: Package Sources
+  dependsOn: Test
   jobs:
   - job: Package
     displayName: Package
